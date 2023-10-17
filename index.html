@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Geopark</title>
+    <!-- mullish font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- icon library -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        #search {
+            position: relative;
+            width: 53vw;
+        }
+
+        #search .ac.ac-hidden {
+            opacity: 0;
+        }
+
+        #search .ac {
+            line-height: 20px;
+            font-size: 20px;
+            font-family: 'Yantramanav',sans-serif;
+            font-weight: normal;
+            letter-spacing: 0em;
+            z-index: 1;
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            opacity: 0.3;
+            pointer-events: none;
+            transition: .3s cubic-bezier(.55, 0, .1, 1) all;
+        }
+
+        .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#search input {
+    line-height: 20px;
+    font-size: 20px;
+    font-family: 'Yantramanav',sans-serif;
+    font-weight: normal;
+    letter-spacing: 0em;
+    border: 0px;
+    padding: 25px;
+    padding-right: 100px;
+    width: 53vw;
+    display: block;
+    text-align: center;
+    position: relative;
+    color: #373e65;
+    transition: all .3s cubic-bezier(.55, 0, .1, 1);
+}
+
+#search button {
+    cursor: pointer;
+    font-family: 'Yantramanav',sans-serif;
+    font-size: 16px;
+    color: white;
+    background: #6dc717;
+    border: 0;
+    padding: 15px 60px;
+    line-height: 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translate(25%, -50%);
+    transform: translate(25%, -50%);
+    overflow: hidden;
+    transition: all .3s cubic-bezier(.55, 0, .1, 1);
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-search:before {
+    content: "\f002";
+}
+
+#search button:after {
+    position: absolute;
+    background: #2f4366;
+    color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: .3s cubic-bezier(.55, 0, .1, 1) all;
+    opacity: 0;
+    content: "";
+    left: 100%;
+    font-size: 21px;
+    line-height: 40px;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <div class="overflow-x-hidden overflow-y-hidden relative w-full">
+        <!-- navbar -->
+        <nav class="bg-deepBlueHead">
+            <div class="relative w-[1080px] flex mx-auto justify-between items-center">
+                
+                    <a href="#" class="cursor-pointer py-7 pr-7">   
+                        <h1 class="font-mullish font-extrabold text-2xl text-white flex items-center">GeoPark</h1>
+                    </a>
+                    
+                    <ul class="flex space-x-6">
+                        <li class="text-white font-mullish text-[18px] py-7 hover:text-lightBlue cursor-pointer 
+                        transition-all duration-200 relative group">
+                        <a href="#Home">Home</a>
+
+                        <li class="text-white font-mullish text-[18px] py-7 hover:text-lightBlue cursor-pointer 
+                        transition-all duration-200 relative group">
+                        <a href="#About Us">About Us</a>
+
+                        <li class="text-white font-mullish text-[18px] py-7 hover:text-lightBlue cursor-pointer 
+                        transition-all duration-200 relative group">
+                        <a href="#How To Use">How To Use</a>
+
+                        <li class="text-white font-mullish text-[18px] py-7 hover:text-lightBlue cursor-pointer 
+                        transition-all duration-200 relative group">
+                        <a href="#Home">Services</a>
+
+                        <li class="text-white font-mullish text-[18px] py-7 hover:text-lightBlue cursor-pointer 
+                        transition-all duration-200 relative group">
+                        <a href="#Home">Contact Us</a>
+                    </ul>
+
+                    <div class="flex space-x-6">
+                        <button  class="py-2 px-3 font-mullish  rounded-sm text-sm font-bold bg-white text-lightBlue300
+                        border transition-all duration-200 hover:text-lightBlue500 flex items-center" >
+                        <a href="login.html">Login</a>
+                        <svg class="w-3.5 h-3 ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg> 
+                        
+                        </button>
+
+                        
+                        <button class="py-2 px-3 font-mullish  rounded-sm text-sm font-bold bg-white text-lightBlue300
+                        border transition-all duration-200 hover:text-lightBlue500 flex items-center" >
+                        <a href="register.html">Register</a>
+                        <svg class="w-3.5 h-3 ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg> 
+                        </button>
+                    </div>
+        
+
+            </div>
+
+        </nav>
+
+        <!-- hero section -->
+        <section class=" h-[100px] bg-[url(/images/parking1.jpg)] bg-no-repeat bg-cover bg-center pt-[16rem] pb-[400px]">
+            <div class="w-10/12 max-w-[1080px] mx-auto relative pt-4 space-y-5">
+                <h2 class="font-mullish font-semibold text-white text-3xl leading-[1.2] text-center">YOUR PARKING SPOT FROM A DAY TO A LIFETIME.</h2>
+                <p class="font-mullish font-semibold text-white text-xl leading-[1.2] text-center ">Trusted by over 20,000 users</p>
+
+                
+        <form>   
+                <label for="default-search" class="mb-2 text-sm font-medium text-white sr-only dark:text-white">Search</label>
+            <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-4 h-4  text-lightBlue dark:text-lightBlue" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                        </div>
+                    <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-grayText border-white rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-white dark:placeholder-gray-400 dark:text-grayText dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Where do you want to park?" required >
+                    <button type="submit"  class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " onclick="func1()">Search</button>
+            </div>
+
+
+        </form>
+
+
+
+            </div>
+            
+
+        </section>
+
+        <!-- how to use -->
+        <section class="w-full relative">
+            <div class="relative w-11/12 max-w-[1080px] mx-auto pt-12 m-12">
+                <h2 class="font-mullish font-bold text-3xl text-center text-deepBlue">How To Use?</h2>
+                <div class="w-6 h-1 bg-greenLight mx-auto mt-4 mb-6"></div>
+                <p class="font-mullish text-center text-xl font-normal tracking-widest">SIMPLE, FAST AND FLEXIBLE</p>
+            
+
+            <!-- flex -->
+            <div class=" w-full flex flex-row gap-[10rem] mt-8">
+                <!-- card1 -->
+                <div class="flex flex-col space-y-3 mt-8">
+                    <p class="font-mullish text-xl font-bold ">Step 1</p>
+                <img src="./images/1.png" alt="" loading="lazy" class="w-[300px]">
+                <h3 class="font-mullish font-bold text-lg">Choose Parking</h3>
+                <p class="max-w-[300px]">Our website allows you to find a parking space near your destination. Search with the desired 
+                    address and compare the offers!
+                </p>
+
+                </div>
+                
+
+                <div class="flex flex-col space-y-3 mt-8">
+                    <p class="font-mullish text-xl font-bold ">Step 2</p>
+                <img src="./images/2.png" alt="" loading="lazy" class="w-[300px]">
+                <h3 class="font-mullish font-bold text-lg">Book your place in 3 clicks</h3>
+                <p class="max-w-[300px]">Rent directly the parking that suits you, whatever the duration, and 
+                    drive with peace of mind!
+                </p>
+
+                </div>
+
+                <div class="flex flex-col space-y-3 mt-8">
+                    <p class="font-mullish text-xl font-bold ">Step 3</p>
+                <img src="./images/3.png" alt="" loading="lazy" class="w-[300px]">
+                <h3 class="font-mullish font-bold text-lg">Park you car!</h3>
+                <p class="max-w-[300px]">Open the parking gate with your phone, then... simply park your car!</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </section>
+
+    </div>
+
+    <script>
+        function func1(){
+            let a = document.getElementById("default-search").value;
+            console.log(a);
+            return a;   
+        }
+    </script>
+    
+</body>
+</html>
